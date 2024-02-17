@@ -5,6 +5,7 @@ export const GlobalContext = createContext();
 const MainContext = ({ children }) => {
   const [upNext, setUpNext] = useState();
   const [popular, setPopular] = useState();
+  const [render, setRenderr] = useState(1)
 
   useEffect(() => {
    const fetchUpcomming =() => fetch(
@@ -36,20 +37,27 @@ const MainContext = ({ children }) => {
       transition: Bounce,
     });
   };
-
+  const handleRender = () => { 
+    setRenderr(render+1)
+   }
 // Watch list controller
 const addToWatchList = (movie) => {
     let movies = JSON.parse(localStorage.getItem("movies")) || [];
     movies.push(movie);
     localStorage.setItem("movies", JSON.stringify(movies));
     success("Added to watchlist!");
+    handleRender();
   };
-  
+
+
+
+
 
   const info = {
     upNext,
     addToWatchList,
-    popular
+    popular,
+    handleRender
   };
   return (
     <GlobalContext.Provider value={info}>{children}</GlobalContext.Provider>

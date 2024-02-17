@@ -1,4 +1,5 @@
 import Slider from "./Carousel/Carousel";
+import FromWatchList from "./FromWatchList/FromWatchList";
 import Popular from "./Popular/Popular";
 import UpComming from "./UpComming/UpComming";
 import WhatsComing from "./WhatsComing/WhatsComing";
@@ -19,6 +20,7 @@ const Browse = () => {
       <Popular/>
       {/* Explore what's Coming */}
       <WhatsComing/>
+      <FromWatchList/>
     </div>
   );
 };
