@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import Navbar from "./common/navbar/Navbar";
 import { LuLogIn } from "react-icons/lu";
 import Navlinks from "./common/navbar/Navlinks";
+import Footer from "./common/footer/Footer";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         {/* Page content here */}
         <Navbar />
         <Outlet />
+        <Footer/>
       </div>
       <div className="drawer-side bg-[#100f10] hidden lg:block">
         <ul className="menu p-4 w-80 min-h-full gap-5 text-title border-r border-r-[#737272]  border-opacity-30">

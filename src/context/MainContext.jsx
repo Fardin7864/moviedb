@@ -5,7 +5,8 @@ export const GlobalContext = createContext();
 const MainContext = ({ children }) => {
   const [upNext, setUpNext] = useState();
   const [popular, setPopular] = useState();
-  const [render, setRenderr] = useState(1)
+  const [render, setRenderr] = useState(1);
+  const [tvShow, setTvShow] = useState();
 
   useEffect(() => {
    const fetchUpcomming =() => fetch(
@@ -18,9 +19,15 @@ const MainContext = ({ children }) => {
       )
         .then((res) => res.json())
         .then((data) => setPopular(data.results));
+      const tvShow = () => fetch(
+        "https://api.themoviedb.org/3/discover/tv?api_key=38bb64131f6a09cb91a161b833a0f5e1"
+      )
+        .then((res) => res.json())
+        .then((data) => setTvShow(data.results));
 
         fetchUpcomming();
         fetchPopular();
+        tvShow();
   }, []);
 
   // Toast
@@ -57,7 +64,8 @@ const addToWatchList = (movie) => {
     upNext,
     addToWatchList,
     popular,
-    handleRender
+    handleRender,
+    tvShow
   };
   return (
     <GlobalContext.Provider value={info}>{children}</GlobalContext.Provider>
