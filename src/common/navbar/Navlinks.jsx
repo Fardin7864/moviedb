@@ -69,7 +69,7 @@ const Navlinks = () => {
       </li>
       <li>
         <NavLink
-          to={"/comming-soon"}
+          to={"/coming-soon"}
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -79,7 +79,7 @@ const Navlinks = () => {
           }
         >
           <BsCalendar2DateFill className=" text-2xl font-bold mr-4" />
-          <span className=" text-md font-semibold py-2">Comming Soon</span>
+          <span className=" text-md font-semibold py-2">Coming Soon</span>
         </NavLink>
       </li>
     </>

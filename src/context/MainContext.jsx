@@ -7,23 +7,24 @@ const MainContext = ({ children }) => {
   const [popular, setPopular] = useState();
   const [render, setRenderr] = useState(1);
   const [tvShow, setTvShow] = useState();
+  const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
    const fetchUpcomming =() => fetch(
       "https://api.themoviedb.org/3/movie/upcoming?api_key=38bb64131f6a09cb91a161b833a0f5e1"
     )
       .then((res) => res.json())
-      .then((data) => setUpNext(data.results));
+      .then((data) => setUpNext(data.results)).then(setIsloading(false))
       const fetchPopular = () => fetch(
         "https://api.themoviedb.org/3/movie/popular?api_key=38bb64131f6a09cb91a161b833a0f5e1"
       )
         .then((res) => res.json())
-        .then((data) => setPopular(data.results));
+        .then((data) => setPopular(data.results)).then(setIsloading(false))
       const tvShow = () => fetch(
         "https://api.themoviedb.org/3/discover/tv?api_key=38bb64131f6a09cb91a161b833a0f5e1"
       )
         .then((res) => res.json())
-        .then((data) => setTvShow(data.results));
+        .then((data) => setTvShow(data.results)).then(setIsloading(false))
 
         fetchUpcomming();
         fetchPopular();
@@ -65,7 +66,8 @@ const addToWatchList = (movie) => {
     addToWatchList,
     popular,
     handleRender,
-    tvShow
+    tvShow,
+    isLoading,
   };
   return (
     <GlobalContext.Provider value={info}>{children}</GlobalContext.Provider>
