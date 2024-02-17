@@ -8,8 +8,8 @@ const UpComming = () => {
 
   //   console.log(upNext);
   return (
-    <div>
-      <h2 className=" text-p text-xl font-extrabold mb-5">Up Next</h2>
+    <div className=" ">
+      <h2 className=" text-p text-xl font-extrabold mb-5 px-2 lg:px-0">Up Next</h2>
       <div className=" grid lg:grid-cols-1 md:grid-cols-2">
              {upNext?.slice(0, 3)?.map((movie) => (
         <div

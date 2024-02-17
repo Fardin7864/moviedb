@@ -4,13 +4,22 @@ import { Bounce, toast } from "react-toastify";
 export const GlobalContext = createContext();
 const MainContext = ({ children }) => {
   const [upNext, setUpNext] = useState();
+  const [popular, setPopular] = useState();
 
   useEffect(() => {
-    fetch(
+   const fetchUpcomming =() => fetch(
       "https://api.themoviedb.org/3/movie/upcoming?api_key=38bb64131f6a09cb91a161b833a0f5e1"
     )
       .then((res) => res.json())
       .then((data) => setUpNext(data.results));
+      const fetchPopular = () => fetch(
+        "https://api.themoviedb.org/3/movie/popular?api_key=38bb64131f6a09cb91a161b833a0f5e1"
+      )
+        .then((res) => res.json())
+        .then((data) => setPopular(data.results));
+
+        fetchUpcomming();
+        fetchPopular();
   }, []);
 
   // Toast
@@ -39,7 +48,8 @@ const addToWatchList = (movie) => {
 
   const info = {
     upNext,
-    addToWatchList
+    addToWatchList,
+    popular
   };
   return (
     <GlobalContext.Provider value={info}>{children}</GlobalContext.Provider>
