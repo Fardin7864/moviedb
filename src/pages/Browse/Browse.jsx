@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import Slider from "../Carousel/Carousel";
 
 const Browse = () => {
-    return (
-        <div>
-            <h2 className=' text-4xl font-bold'>this is home</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Slider />
+    </div>
+  );
 };
 
 export default Browse;
