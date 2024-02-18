@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../../context/MainContext";
 import { FaStar, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { BsBookmarkPlus } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 
 const Popular = () => {
@@ -34,13 +35,13 @@ const Popular = () => {
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
         {movies?.map((movie) => (
           <div key={movie.id} className="card card-compact shadow-xl">
-            <figure>
+            <Link to={`/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie?.poster_path}`}
                 alt="Movie"
                 className="w-full hover:opacity-55 active:opacity-25"
               />
-            </figure>
+            </Link>
             <div className="card-body">
               <h2 className="card-title">
                 {movie.title}{" "}

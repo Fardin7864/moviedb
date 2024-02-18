@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaStar } from "react-icons/fa6";
 import { GlobalContext } from "../../../context/MainContext";
 import { BsBookmarkPlus } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const UpComming = () => {
   const { upNext, addToWatchList } = useContext(GlobalContext);
@@ -16,14 +17,14 @@ const UpComming = () => {
           key={movie.id}
           className="card card-side h-36 my-4 rounded-none px-4"
         >
-          <figure>
+          <Link to={`/${movie.id}`}>
             <img
               src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie?.poster_path}`}
               alt="Movie"
               className=" h-32 rounded-md hover:opacity-55"
             />
             
-          </figure>
+          </Link>
           <div className=" ml-5 flex flex-col gap-2 justify-center">
             <h4 className=" hover:text-red-500">{movie.title}</h4>
             <p className=" flex items-center gap-3">

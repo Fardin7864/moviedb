@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 const FromWatchList = () => {
@@ -8,7 +9,7 @@ const FromWatchList = () => {
         const moviesFromStorage =  JSON.parse(localStorage.getItem('movies'));
         setMovies(moviesFromStorage)
      },[])
-     console.log(movies)
+    //  console.log(movies)
   return (
     <div className=" px-3 my-10">
       <div className=" flex items-center gap-5">
@@ -18,13 +19,14 @@ const FromWatchList = () => {
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
         {movies?.map((movie) => (
           <div key={movie.id+1} className="card card-compact shadow-xl">
-            <figure>
+            <Link to={`/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie?.poster_path}`}
                 alt="Movie"
                 className="w-full hover:opacity-55 active:opacity-25"
+                
               />
-            </figure>
+            </Link>
             <div className="card-body">
               <h2 className="card-title">
                 {movie.title}
