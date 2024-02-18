@@ -10,17 +10,17 @@ const MainContext = ({ children }) => {
   const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
-   const fetchUpcomming =() => fetch(
+   const fetchUpcomming = async () => await fetch(
       "https://api.themoviedb.org/3/movie/upcoming?api_key=38bb64131f6a09cb91a161b833a0f5e1"
     )
       .then((res) => res.json())
       .then((data) => setUpNext(data.results)).then(setIsloading(false))
-      const fetchPopular = () => fetch(
+      const fetchPopular = async () => await fetch(
         "https://api.themoviedb.org/3/movie/popular?api_key=38bb64131f6a09cb91a161b833a0f5e1"
       )
         .then((res) => res.json())
         .then((data) => setPopular(data.results)).then(setIsloading(false))
-      const tvShow = () => fetch(
+      const tvShow = async () => await fetch(
         "https://api.themoviedb.org/3/discover/tv?api_key=38bb64131f6a09cb91a161b833a0f5e1"
       )
         .then((res) => res.json())

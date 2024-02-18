@@ -6,6 +6,7 @@ import Popular from "../pages/Browse/Popular/Popular";
 import TvShow from "../pages/Browse/TvShow/TvShow";
 import WhatsComing from "../pages/Browse/WhatsComing/WhatsComing";
 import Details from "../pages/Details/Details";
+import SearchReasult from "../pages/SearchReasult/SearchReasult";
 
 
 const route  = createBrowserRouter([
@@ -36,7 +37,10 @@ const route  = createBrowserRouter([
             {
                 path:'/:id',
                 element: <Details/>,
-                // loader:()=> fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=38bb64131f6a09cb91a161b833a0f5e1`),
+            },
+            {
+                path: '/search/:string',
+                element: <SearchReasult/>,
             }
         ]
     }
