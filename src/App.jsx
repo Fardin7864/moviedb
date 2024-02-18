@@ -22,7 +22,7 @@ function App() {
             <h4 className=" text-xl font-medium flex gap-0">
               VELO.<span className=" text-p font-extrabold">CI</span>
             </h4>
-            <img src="/public/logo.png" alt="" className="w-16 " />
+            <img src={"https://i.ibb.co/TLHpMDz/logo.png"} alt="" className="w-16 " />
           </li>
           <li className="">
             <p className=" text-sub">News Feed</p>

@@ -8,19 +8,19 @@ const Slider = () => {
         
         <Carousel autoPlay = {true} infiniteLoop={true} swipeable={true}>
                 <div>
-                    <img src="../../../public/avengers.jpg" className=" rounded-2xl"/>
+                    <img src={'https://i.ibb.co/2j0ZTPc/imdb.jpg'} className=" rounded-2xl"/>
                 </div>
                 <div>
-                    <img src="../../../public/dedpol.jpg" className=" rounded-2xl"/>
+                    <img src={'https://i.ibb.co/yfmT7KT/movie2.jpg'} className=" rounded-2xl"/>
                 </div>
                 <div>
-                    <img src="../../../public/imdb.jpg" className=" rounded-2xl"/>
+                    <img src={"https://i.ibb.co/yfmT7KT/movie2.jpg"} className=" rounded-2xl"/>
                 </div>
                 <div>
-                    <img src="../../../public/movie2.jpg" className=" rounded-2xl"/>
+                    <img src={"https://i.ibb.co/kq4drHM/avengers.jpg"} className=" rounded-2xl"/>
                 </div>
                 <div>
-                    <img src="../../../public/spider.jpg" className=" rounded-2xl"/>
+                    <img src={"https://i.ibb.co/fdkwnpF/dedpol.jpg"} className=" rounded-2xl"/>
                 </div>
             </Carousel>
     );
