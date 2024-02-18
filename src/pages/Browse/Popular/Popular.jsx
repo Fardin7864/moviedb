@@ -20,9 +20,12 @@ const Popular = () => {
 
   return (
     <div className=" px-3 my-10">
-      <div className=" flex items-center gap-5">
+      <div className=" flex md:flex-row flex-col items-center gap-5">
+        <div className=" flex gap-5 items-center">
         <div className=" h-10 w-1 bg-[#ad241b] rounded-sm"></div>
         <h3 className=" text-3xl font-bold text-[#F5C518]">Popular Movies</h3>
+        </div>
+        {/* filter */}
         <div className=" flex gap-4 items-center my-4">
             <p className=" text-xl font-bold">Filter </p>
             <select className=" bg-black border rounded-md p-1 text-title" value={filter} onChange={(e) => setFilter(e.target.value)}>

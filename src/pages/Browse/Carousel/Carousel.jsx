@@ -14,7 +14,7 @@ const Slider = () => {
                     <img src={'https://i.ibb.co/yfmT7KT/movie2.jpg'} className=" rounded-2xl"/>
                 </div>
                 <div>
-                    <img src={"https://i.ibb.co/yfmT7KT/movie2.jpg"} className=" rounded-2xl"/>
+                    <img src={"https://i.ibb.co/YQHvL99/spider.jpg"} className=" rounded-2xl"/>
                 </div>
                 <div>
                     <img src={"https://i.ibb.co/kq4drHM/avengers.jpg"} className=" rounded-2xl"/>

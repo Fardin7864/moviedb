@@ -10,7 +10,7 @@ const Footer = () => {
         <div>
             <div className=' flex flex-col justify-center items-center mt-14 mb-5'>
             <button className=' px-5 py-2 font-bold bg-[#f5c518] text-black rounded-md'>Sign In For More Access</button>
-            <div className=" flex gap-16 my-5 text-3xl">
+            <div className=" flex flex-wrap gap-8 md:gap-16 my-5 text-3xl px-5 items-center justify-center">
                 <PiTiktokLogoLight/> <FaInstagram/> <CiTwitter/> <FaFacebook/> <FaYoutube />
             </div>
             </div>
